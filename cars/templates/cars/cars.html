@@ -8,7 +8,7 @@
         <div class="breadcrumb-areas">
             <h1>Our Car Inventory</h1>
             <ul class="breadcrumbs">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
                 <li class="active">Cars</li>
             </ul>
         </div>
@@ -23,6 +23,8 @@
             <div class="col-lg-8 col-md-12">
                 
                 <div class="row">
+                    
+                    {% for feature in features_cars %}
                     <div class="col-lg-6 col-md-6">
                         <div class="car-box-3">
                             <div class="car-thumbnail">
@@ -78,7 +80,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
+                    {% endfor %}
+                        
+                    {% comment %} <div class="col-lg-6 col-md-6">
                         <div class="car-box-3">
                             <div class="car-thumbnail">
                                 <a href="car-details.html" class="car-img">
@@ -465,7 +469,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> {% endcomment %}
                 </div>
                 <!-- Page navigation start -->
                 <div class="pagination-box p-box-2 text-center">
